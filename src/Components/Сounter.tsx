@@ -30,7 +30,7 @@ export const Counter = () => {
         else setError(false)
     }
 
-    console.log(number, min, max, error)
+    console.log(number, min, max)
 
     return (
         <div className={styles.item}>

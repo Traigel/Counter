@@ -1,5 +1,5 @@
-import React, {ChangeEvent, useState} from 'react';
-import { NumberInput } from '../NumberInput/NumberInput';
+import React, {ChangeEvent} from 'react';
+import {NumberInput} from '../NumberInput/NumberInput';
 import styles from './Settings.module.css'
 
 type SettingsPropsType = {
@@ -11,14 +11,16 @@ type SettingsPropsType = {
 
 export const Settings = (props: SettingsPropsType) => {
 
-    const onChangeMinHandler = (e: ChangeEvent<HTMLInputElement>) => props.minCallBack(+e.currentTarget.value)
+    const onChangeMinHandler = (e: ChangeEvent<HTMLInputElement>) =>
+        props.minCallBack(Math.round(+e.currentTarget.value))
 
-    const onChangeMaxHandler = (e: ChangeEvent<HTMLInputElement>) => props.maxCallBack(+e.currentTarget.value)
+    const onChangeMaxHandler = (e: ChangeEvent<HTMLInputElement>) =>
+        props.maxCallBack(Math.round(+e.currentTarget.value))
 
     return (
         <div className={styles.inputNumber}>
-            <NumberInput value={props.min} onChange={onChangeMinHandler}/>
-            <NumberInput value={props.max} onChange={onChangeMaxHandler}/>
+            <NumberInput className={styles.input} value={props.min} onChange={onChangeMinHandler}/>
+            <NumberInput className={styles.input} value={props.max} onChange={onChangeMaxHandler}/>
         </div>
     )
 }
