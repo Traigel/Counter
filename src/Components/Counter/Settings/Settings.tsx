@@ -12,10 +12,10 @@ type SettingsPropsType = {
 export const Settings = (props: SettingsPropsType) => {
 
     const onChangeMinHandler = (e: ChangeEvent<HTMLInputElement>) =>
-        props.minCallBack(Math.round(+e.currentTarget.value))
+        props.minCallBack(~~(+e.currentTarget.value))
 
     const onChangeMaxHandler = (e: ChangeEvent<HTMLInputElement>) =>
-        props.maxCallBack(Math.round(+e.currentTarget.value))
+        props.maxCallBack(~~(+e.currentTarget.value))
 
     return (
         <div className={styles.inputNumber}>
