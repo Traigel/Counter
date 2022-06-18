@@ -3,8 +3,8 @@ import {NumberInput} from '../../NumberInput/NumberInput';
 import styles from './Settings.module.css'
 
 type SettingsPropsType = {
-    min: number
-    max: number
+    minNumber: number
+    maxNumber: number
     minCallBack: (e: number) => void
     maxCallBack: (e: number) => void
 }
@@ -19,8 +19,8 @@ export const Settings = (props: SettingsPropsType) => {
 
     return (
         <div className={styles.inputNumber}>
-            <NumberInput className={styles.input} value={props.min} onChange={onChangeMinHandler}/>
-            <NumberInput className={styles.input} value={props.max} onChange={onChangeMaxHandler}/>
+            <NumberInput className={styles.input} value={props.minNumber} onChange={onChangeMinHandler}/>
+            <NumberInput className={styles.input} value={props.maxNumber} onChange={onChangeMaxHandler}/>
         </div>
     )
 }
