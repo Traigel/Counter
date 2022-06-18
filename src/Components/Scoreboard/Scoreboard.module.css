@@ -1,0 +1,12 @@
+.red {
+    color: red;
+}
+
+.counterH1 {
+    border: cadetblue 5px solid;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 30px;
+    margin: 0;
+    width: 80px;
+}

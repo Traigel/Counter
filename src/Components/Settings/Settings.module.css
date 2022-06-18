@@ -1,0 +1,15 @@
+.inputNumber {
+    background-color: darkgray;
+    border: cadetblue 5px solid;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 5px;
+    margin-top: 5px;
+    width: 160px;
+}
+
+.inputNumber input {
+    width: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

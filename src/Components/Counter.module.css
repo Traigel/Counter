@@ -1,6 +1,8 @@
 .item {
     text-align: center;
+    margin-top: 20px;
 }
+
 .counterItem {
     border: cadetblue 5px solid;
     border-radius: 10px;
@@ -9,32 +11,9 @@
     background-color: darkgray;
 }
 
-.counterH1 {
-    border: cadetblue 5px solid;
-    border-radius: 10px;
-    display: inline-block;
-    padding: 30px;
-}
-
-.red {
-    color: red;
-}
-
 .button {
-    margin-left: 10px;
-}
-
-.inputNumber {
-    background-color: darkgray;
-    border: cadetblue 5px solid;
-    border-radius: 10px;
-    display: inline-block;
-    padding: 5px;
-    margin-top: 5px;
-}
-
-.inputNumber input{
-    width: 40px;
+    width: 50px;
+    margin: 10px 10px 0 10px;
 }
 
 .error {
