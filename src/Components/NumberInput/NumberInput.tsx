@@ -8,6 +8,6 @@ type NumberInputPropsType = {
 
 export const NumberInput = (props: NumberInputPropsType) => {
     return (
-        <input type='number' className={props.className}  value={props.value} onChange={props.onChange}/>
+        <input type='number' className={props.className} value={props.value} onChange={props.onChange}/>
     )
 }

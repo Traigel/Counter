@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './Counter.module.css'
 import {Scoreboard} from "./Scoreboard/Scoreboard";
 import {Settings} from './Settings/Settings';
-import {SuperButton} from "./SuperButton/SuperButton";
+import {SuperButton} from "../SuperButton/SuperButton";
 
 export const Counter = () => {
     const [number, setNumber] = useState<number>(0)

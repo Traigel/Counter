@@ -1,5 +1,5 @@
 import React, {ChangeEvent} from 'react';
-import {NumberInput} from '../NumberInput/NumberInput';
+import {NumberInput} from '../../NumberInput/NumberInput';
 import styles from './Settings.module.css'
 
 type SettingsPropsType = {
