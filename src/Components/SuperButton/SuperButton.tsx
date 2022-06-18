@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../Counter.module.css'
 
 type SuperButtonPropsType = {
     name: string,

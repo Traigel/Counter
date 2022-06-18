@@ -1,4 +1,5 @@
 import React, {ChangeEvent, useState} from 'react';
+import { NumberInput } from '../NumberInput/NumberInput';
 import styles from './Settings.module.css'
 
 type SettingsPropsType = {
@@ -16,8 +17,8 @@ export const Settings = (props: SettingsPropsType) => {
 
     return (
         <div className={styles.inputNumber}>
-            <input type='number' value={props.min} onChange={onChangeMinHandler}/>
-            <input type='number' value={props.max} onChange={onChangeMaxHandler}/>
+            <NumberInput value={props.min} onChange={onChangeMinHandler}/>
+            <NumberInput value={props.max} onChange={onChangeMaxHandler}/>
         </div>
     )
 }

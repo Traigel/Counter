@@ -4,9 +4,9 @@ import {Counter} from "./Components/Сounter";
 
 function App() {
 
-  return (
-      <Counter/>
-  )
+    return (
+        <Counter/>
+    )
 }
 
 export default App;
