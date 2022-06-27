@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './Counter.module.css'
 import {Scoreboard} from "./Scoreboard/Scoreboard";
 import {Settings} from './Settings/Settings';
@@ -11,14 +11,28 @@ export const Counter = () => {
     const [error, setError] = useState<boolean>(false)
     const [showSet, setShowSet] = useState<boolean>(true)
 
-    const onClickResetHandler = () => setNumber(minNumber)
-    const onClickIncHandler = () => setNumber(number + 1)
+    useEffect( () => {
+        let min = localStorage.getItem('minValue')
+        let max = localStorage.getItem('maxValue')
+        if (min) setMinNumber(+min)
+        if (min) setNumber(+min)
+        if (max) setMaxNumber(+max)
+        //if (minNumber === maxNumber) setError(true)
+    }, [])
+
+    const onClickResetHandler = () => {
+        setNumber(minNumber)
+    }
+    const onClickIncHandler = () => {
+        setNumber(number + 1)
+    }
 
     const minCallBackHandler = (el: number) => {
         if (el > maxNumber || el < 0) return
         else {
             setMinNumber(el)
             setNumber(el)
+            localStorage.setItem('minValue', ''+el)
         }
         if (el >= maxNumber || el < 0) setError(true)
         else setError(false)
@@ -26,18 +40,24 @@ export const Counter = () => {
 
     const maxCallBackHandler = (el: number) => {
         if (el < minNumber) return
-        else setMaxNumber(el)
+        else {
+            setMaxNumber(el)
+            localStorage.setItem('maxValue', ''+el)
+        }
         if (el <= minNumber) setError(true)
         else setError(false)
     }
 
-    const setHandler = () => setShowSet(!showSet)
+    const setHandler = () => {
+        setShowSet(!showSet)
+    }
 
     console.log(number, minNumber, maxNumber)
 
     return (
         <div className={styles.item}>
-            {showSet ? <div className={styles.itemEl}>
+            {showSet ?
+                <div className={styles.itemEl}>
                     <Scoreboard number={number} maxNumber={maxNumber} error={error}/>
                     <SuperButton
                         className={styles.button}
@@ -62,7 +82,12 @@ export const Counter = () => {
                         minCallBack={minCallBackHandler}
                         maxCallBack={maxCallBackHandler}
                     />
-                    <SuperButton className={`${styles.button} ${styles.buttonCount}`} name={'counter'} callBack={setHandler}/>
+                    <SuperButton className={`${styles.button} ${styles.buttonCount}`}
+                                 name={'counter'}
+                                 callBack={setHandler}
+                                 disabled={maxNumber <= minNumber}
+                    />
+
                 </div>}
             <div className={styles.error}>{error ? 'Error, min cannot be greater than or equal to max!' : ''}</div>
         </div>

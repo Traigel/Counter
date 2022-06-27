@@ -6,7 +6,7 @@ type NumberInputPropsType = {
     className?: string
 }
 
-export const NumberInput = (props: NumberInputPropsType) => {
+export const SuperNumberInput = (props: NumberInputPropsType) => {
     return (
         <input type='number' className={props.className} value={props.value} onChange={props.onChange}/>
     )
