@@ -17,7 +17,7 @@ export const Counter = () => {
         if (min) setMinNumber(+min)
         if (min) setNumber(+min)
         if (max) setMaxNumber(+max)
-        if (min === max) setError(true)
+        if (min && min === max) setError(true)
     }, [])
 
     const onClickResetHandler = () => {
@@ -89,7 +89,7 @@ export const Counter = () => {
                     />
 
                 </div>}
-            <div className={styles.error}>{error ? 'Error, min cannot be greater than or equal to max!' : ''}</div>
+            <div className={styles.error}>{error ? 'Error, min number cannot be greater or equal than max number!' : ''}</div>
         </div>
     )
 }
