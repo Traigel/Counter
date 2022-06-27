@@ -17,7 +17,7 @@ export const Counter = () => {
         if (min) setMinNumber(+min)
         if (min) setNumber(+min)
         if (max) setMaxNumber(+max)
-        //if (minNumber === maxNumber) setError(true)
+        if (min === max) setError(true)
     }, [])
 
     const onClickResetHandler = () => {
