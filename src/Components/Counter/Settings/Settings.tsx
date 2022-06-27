@@ -14,9 +14,7 @@ export const Settings = (props: SettingsPropsType) => {
 
     const onChangeMinHandler = (e: ChangeEvent<HTMLInputElement>) => props.minCallBack(~~(+e.currentTarget.value))
 
-
     const onChangeMaxHandler = (e: ChangeEvent<HTMLInputElement>) => props.maxCallBack(~~(+e.currentTarget.value))
-
 
     const stylesInput = `${styles.input} ${props.error ? styles.error : ''}`
 

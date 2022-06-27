@@ -12,12 +12,12 @@ export const Counter = () => {
     const [showSet, setShowSet] = useState<boolean>(true)
 
     useEffect( () => {
-        let min = localStorage.getItem('minValue')
-        let max = localStorage.getItem('maxValue')
+        const min = localStorage.getItem('minValue')
+        const max = localStorage.getItem('maxValue')
         if (min) setMinNumber(+min)
         if (min) setNumber(+min)
         if (max) setMaxNumber(+max)
-        if (min && min === max) setError(true)
+        if (min && max && min === max) setError(true)
     }, [])
 
     const onClickResetHandler = () => {
