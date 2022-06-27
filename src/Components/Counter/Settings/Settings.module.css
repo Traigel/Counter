@@ -1,15 +1,21 @@
 .inputNumber {
-    background-color: darkgray;
-    border: cadetblue 5px solid;
+    border: dimgray 5px solid;
     border-radius: 10px;
+    margin: 10px;
+    height: 100px;
+}
+
+.inputNumber p {
     display: inline-block;
-    padding: 5px;
-    margin-top: 5px;
-    width: 160px;
+    margin-left: 3px;
 }
 
 .input {
-    width: 40px;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 50px;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.error {
+    background-color: red;
 }

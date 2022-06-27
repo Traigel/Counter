@@ -10,7 +10,7 @@ type ScoreboardPropsType = {
 export const Scoreboard = (props: ScoreboardPropsType) => {
 
     return (
-        <div>
+        <div className={styles.item}>
             <h1 className={`${props.number >= props.maxNumber ? styles.red : ''} ${styles.counterH1}`}>
                 {props.error ? 'Error' : props.number}
             </h1>

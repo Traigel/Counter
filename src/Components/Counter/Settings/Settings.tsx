@@ -5,6 +5,7 @@ import styles from './Settings.module.css'
 type SettingsPropsType = {
     minNumber: number
     maxNumber: number
+    error: boolean
     minCallBack: (e: number) => void
     maxCallBack: (e: number) => void
 }
@@ -17,10 +18,14 @@ export const Settings = (props: SettingsPropsType) => {
     const onChangeMaxHandler = (e: ChangeEvent<HTMLInputElement>) =>
         props.maxCallBack(~~(+e.currentTarget.value))
 
+    const stylesInput = `${styles.input} ${props.error ? styles.error : ''}`
+
     return (
         <div className={styles.inputNumber}>
-            <NumberInput className={styles.input} value={props.minNumber} onChange={onChangeMinHandler}/>
-            <NumberInput className={styles.input} value={props.maxNumber} onChange={onChangeMaxHandler}/>
+            <p>Max-Number</p>
+            <NumberInput className={stylesInput} value={props.maxNumber} onChange={onChangeMaxHandler}/>
+            <p>Min-Number</p>
+            <NumberInput className={stylesInput} value={props.minNumber} onChange={onChangeMinHandler}/>
         </div>
     )
 }

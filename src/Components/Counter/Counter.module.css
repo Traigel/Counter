@@ -1,19 +1,25 @@
 .item {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-.counterItem {
-    border: cadetblue 5px solid;
-    border-radius: 10px;
-    display: inline-block;
-    padding: 10px;
+.itemEl {
     background-color: darkgray;
+    border: dimgray 5px solid;
+    border-radius: 10px;
+    width: 300px;
+    height: 190px;
+    margin: 0 auto;
 }
 
 .button {
-    width: 50px;
-    margin: 10px 10px 0 10px;
+    font-size: 20px;
+    margin: 10px;
+    width: 70px;
+}
+
+.buttonCount {
+    width: 100px;
 }
 
 .error {

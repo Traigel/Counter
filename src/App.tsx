@@ -5,7 +5,10 @@ import {Counter} from "./Components/Counter/Сounter";
 function App() {
 
     return (
-        <Counter/>
+        <div className={'app'}>
+            <Counter/>
+        </div>
+
     )
 }
 
