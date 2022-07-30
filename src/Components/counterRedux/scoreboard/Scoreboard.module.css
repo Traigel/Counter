@@ -1,0 +1,14 @@
+.item {
+    border: dimgray 5px solid;
+    border-radius: 10px;
+    margin: 10px;
+    height: 100px;
+}
+
+h1 {
+    margin-top: 25px;
+}
+
+.red {
+    color: red;
+}

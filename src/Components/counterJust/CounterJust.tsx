@@ -1,17 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import styles from './Counter.module.css'
-import {Scoreboard} from "./Scoreboard/Scoreboard";
-import {Settings} from './Settings/Settings';
-import {SuperButton} from "../SuperButton/SuperButton";
+import styles from './CounterJust.module.css'
+import {Scoreboard} from "./scoreboard/Scoreboard";
+import {Settings} from './settings/Settings';
+import {SuperButton} from "../superButton/SuperButton";
 
-export const Counter = () => {
+export const CounterJust = () => {
     const [number, setNumber] = useState<number>(0)
     const [minNumber, setMinNumber] = useState<number>(0)
     const [maxNumber, setMaxNumber] = useState<number>(5)
     const [error, setError] = useState<boolean>(false)
     const [showSet, setShowSet] = useState<boolean>(true)
 
-    useEffect( () => {
+    useEffect(() => {
         const min = localStorage.getItem('minValue')
         const max = localStorage.getItem('maxValue')
         if (min) setMinNumber(+min)
@@ -32,7 +32,7 @@ export const Counter = () => {
         else {
             setMinNumber(el)
             setNumber(el)
-            localStorage.setItem('minValue', ''+el)
+            localStorage.setItem('minValue', '' + el)
         }
         if (el >= maxNumber || el < 0) setError(true)
         else setError(false)
@@ -42,7 +42,7 @@ export const Counter = () => {
         if (el < minNumber) return
         else {
             setMaxNumber(el)
-            localStorage.setItem('maxValue', ''+el)
+            localStorage.setItem('maxValue', '' + el)
         }
         if (el <= minNumber) setError(true)
         else setError(false)
@@ -52,10 +52,9 @@ export const Counter = () => {
         setShowSet(!showSet)
     }
 
-    console.log(number, minNumber, maxNumber)
-
     return (
         <div className={styles.item}>
+            CounterJust
             {showSet ?
                 <div className={styles.itemEl}>
                     <Scoreboard number={number} maxNumber={maxNumber} error={error}/>
@@ -89,7 +88,9 @@ export const Counter = () => {
                     />
 
                 </div>}
-            <div className={styles.error}>{error ? 'Error, min number cannot be greater or equal than max number!' : ''}</div>
+            <div className={styles.error}>
+                {error ? 'Error, min number cannot be greater or equal than max number!' : ''}
+            </div>
         </div>
     )
 }

@@ -1,0 +1,29 @@
+.item {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.itemEl {
+    background-color: darkgray;
+    border: dimgray 5px solid;
+    border-radius: 10px;
+    width: 300px;
+    height: 190px;
+    margin: 0 auto;
+}
+
+.button {
+    font-size: 20px;
+    margin: 10px;
+    width: 70px;
+}
+
+.buttonCount {
+    width: 100px;
+}
+
+.error {
+    color: red;
+    height: 20px;
+}

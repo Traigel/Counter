@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-import {Counter} from "./Components/Counter/Сounter";
+import {CounterJust} from "./Components/counterJust/CounterJust";
+import {CounterRedux} from "./Components/counterRedux/CounterRedux";
 
 function App() {
 
     return (
         <div className={'app'}>
-            <Counter/>
+            <CounterJust/>
+            <CounterRedux/>
         </div>
 
     )

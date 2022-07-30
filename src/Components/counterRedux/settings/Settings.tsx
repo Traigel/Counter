@@ -1,5 +1,5 @@
-import React, {ChangeEvent, useEffect} from 'react';
-import {SuperNumberInput} from '../../SuperNumberInput/SuperNumberInput';
+import React, {ChangeEvent} from 'react';
+import {SuperNumberInput} from '../../superNumberInput/SuperNumberInput';
 import styles from './Settings.module.css'
 
 type SettingsPropsType = {
