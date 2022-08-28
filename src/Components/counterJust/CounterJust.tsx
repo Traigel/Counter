@@ -14,17 +14,20 @@ export const CounterJust = () => {
     useEffect(() => {
         const min = localStorage.getItem('minValue')
         const max = localStorage.getItem('maxValue')
+        const number = localStorage.getItem('number')
         if (min) setMinNumber(+min)
-        if (min) setNumber(+min)
+        if (number) setNumber(+number)
         if (max) setMaxNumber(+max)
         if (min && max && min === max) setError(true)
     }, [])
 
     const onClickResetHandler = () => {
         setNumber(minNumber)
+        localStorage.setItem('number', '' + minNumber)
     }
     const onClickIncHandler = () => {
         setNumber(number + 1)
+        localStorage.setItem('number', '' + number)
     }
 
     const minCallBackHandler = (el: number) => {

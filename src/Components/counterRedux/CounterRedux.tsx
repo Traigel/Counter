@@ -1,16 +1,18 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styles from './CounterRedux.module.css'
 import {Settings} from './settings/Settings';
 import {SuperButton} from "../superButton/SuperButton";
 import {Scoreboard} from './scoreboard/Scoreboard';
 import {useDispatch, useSelector} from "react-redux";
-import {AppRootStateType} from "../../redux/store";
+import {AppDispatch, AppRootStateType} from "../../redux/store";
 import {
     errorAC,
     incNumberAC,
     resetNumberAC,
     setMaxNumberAC,
-    setMinNumberAC, settingNumberAC, showRemoveSettingAC
+    setMinNumberAC,
+    settingNumberAC,
+    showRemoveSettingAC
 } from "../../reducers/counterReducer";
 
 export const CounterRedux = () => {
@@ -21,16 +23,7 @@ export const CounterRedux = () => {
     const error = useSelector<AppRootStateType, boolean>(state => state.counter.error)
     const showSet = useSelector<AppRootStateType, boolean>(state => state.counter.showSetting)
 
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        const min = localStorage.getItem('minValue')
-        const max = localStorage.getItem('maxValue')
-        if (min) dispatch(setMinNumberAC(+min))
-        if (min) dispatch(settingNumberAC(+min))
-        if (max) dispatch(setMaxNumberAC(+max))
-        if (min && max && min === max) dispatch(errorAC(true))
-    }, [])
+    const dispatch = useDispatch<AppDispatch>()
 
     const onClickResetHandler = () => dispatch(resetNumberAC())
     const onClickIncHandler = () => dispatch(incNumberAC())
@@ -40,7 +33,6 @@ export const CounterRedux = () => {
         else {
             dispatch(setMinNumberAC(el))
             dispatch(settingNumberAC(el))
-            localStorage.setItem('minValue', '' + el)
         }
         if (el >= maxNumber || el < 0) dispatch(errorAC(true))
         else dispatch(errorAC(false))
@@ -50,7 +42,6 @@ export const CounterRedux = () => {
         if (el < minNumber) return
         else {
             dispatch(setMaxNumberAC(el))
-            localStorage.setItem('maxValue', '' + el)
         }
         if (el <= minNumber) dispatch(errorAC(true))
         else dispatch(errorAC(false))

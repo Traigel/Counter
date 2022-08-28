@@ -5,7 +5,7 @@ type ShowRemoveSettingACType = ReturnType<typeof showRemoveSettingAC>
 type SetMinNumberACType = ReturnType<typeof setMinNumberAC>
 type SetMaxNumberACType = ReturnType<typeof setMaxNumberAC>
 type ErrorACType = ReturnType<typeof errorAC>
-type ActionType = IncNumberACType | ResetNumberACType | ShowRemoveSettingACType | SetMinNumberACType
+export type ActionType = IncNumberACType | ResetNumberACType | ShowRemoveSettingACType | SetMinNumberACType
     | SetMaxNumberACType | ErrorACType | SettingNumberACType
 
 export type CounterType = {
@@ -79,3 +79,4 @@ export const showRemoveSettingAC = () => ({type: 'SHOW-REMOVE-SETTING'} as const
 export const setMinNumberAC = (el: number) => ({type: 'SET-MIN-NUMBER', el} as const)
 export const setMaxNumberAC = (el: number) => ({type: 'SET-MAX-NUMBER', el} as const)
 export const errorAC = (value: boolean) => ({type: 'ERROR', value} as const)
+

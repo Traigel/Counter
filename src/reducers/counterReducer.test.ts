@@ -1,7 +1,6 @@
 import {
     counterReducer,
     CounterType, errorAC,
-    incNumberAC,
     resetNumberAC, setMaxNumberAC, setMinNumberAC, settingNumberAC,
     showRemoveSettingAC,
 } from "./counterReducer";
@@ -17,10 +16,10 @@ beforeEach(()=>{
     }
 })
 
-test('inc number', ()=> {
-    const state = counterReducer(counterState, incNumberAC())
-    expect(state.number).toBe(4)
-})
+// test('inc number', ()=> {
+//     const state = counterReducer(counterState, incNumberAC())
+//     expect(state.number).toBe(4)
+// })
 test('reset number', ()=> {
     const state = counterReducer(counterState, resetNumberAC())
     expect(state.number).toBe(0)
